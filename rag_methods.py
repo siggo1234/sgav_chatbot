@@ -105,8 +105,8 @@ def initialize_vector_db(docs):
         embedding = AzureOpenAIEmbeddings(
             api_key=os.getenv("AZ_OPENAI_API_KEY"), 
             azure_endpoint=os.getenv("AZ_OPENAI_ENDPOINT"),
-            model="text-embedding-3-large",
-            openai_api_version="2024-02-15-preview",
+            model="text-embedding-ada-002",
+            openai_api_version="2024-05-01-preview",
         )
 
     vector_db = Chroma.from_documents(

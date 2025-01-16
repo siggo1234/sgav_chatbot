@@ -30,7 +30,7 @@ if "AZ_OPENAI_API_KEY" not in os.environ:
         "anthropic/claude-3-5-sonnet-20240620",
     ]
 else:
-    MODELS = ["azure-openai/gpt-4o"]
+    MODELS = ["azure-openai/gpt-4o-mini"]
 
 
 st.set_page_config(
@@ -168,7 +168,7 @@ else:
     elif model_provider == "azure-openai":
         llm_stream = AzureChatOpenAI(
             azure_endpoint=os.getenv("AZ_OPENAI_ENDPOINT"),
-            openai_api_version="2024-02-15-preview",
+            openai_api_version="2024-05-01-preview",
             model_name=st.session_state.model.split("/")[-1],
             openai_api_key=os.getenv("AZ_OPENAI_API_KEY"),
             openai_api_type="azure",
